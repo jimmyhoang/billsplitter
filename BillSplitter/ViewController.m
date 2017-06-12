@@ -24,17 +24,28 @@
 
 - (IBAction)calculateSplitAmount:(id)sender {
     NSNumberFormatter* formatter = [[NSNumberFormatter alloc] init];
+    
+    int iPeople = (int)self.amountOfPeopleSlider.value;
 
-    NSNumber* people = [NSNumber numberWithFloat:self.amountOfPeopleSlider.value];
+    NSNumber* people = [NSNumber numberWithInt:iPeople];
                       
     NSNumber* billAmount = [formatter numberFromString:self.billTextField.text];
     
+    NSLog(@"people:%@",people);
+    
     NSDecimalNumber* perPerson = [[NSDecimalNumber decimalNumberWithDecimal:[billAmount decimalValue]] decimalNumberByDividingBy:
                                   [NSDecimalNumber decimalNumberWithDecimal:[people decimalValue]]];
+    NSLog(@"per person:%@",perPerson);
     
-    [formatter setMaximumFractionDigits:2];
-    [formatter setCurrencyCode:@"CAD"];
-    self.amountLabel.text = [NSString stringWithFormat:@"$%@ per person",[formatter stringFromNumber:perPerson]];
+    double tipCalc = [perPerson doubleValue];
+    tipCalc = tipCalc * .12;
+    NSDecimalNumber* tip = [[NSDecimalNumber alloc] initWithDouble:tipCalc];
+    
+    NSLog(@"tip:%@", tip);
+
+    NSDecimalNumber* total = [perPerson decimalNumberByAdding:tip];
+    
+    self.amountLabel.text = [NSString stringWithFormat:@"$%@ per person incl 12%% tip",[formatter stringFromNumber:total]];
 }
 - (IBAction)peopleSlider:(id)sender {
     
