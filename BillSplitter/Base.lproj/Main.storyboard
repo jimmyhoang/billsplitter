@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bill Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zfe-5L-W0s" userLabel="Bill Text Field">
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="5ul-ey-C4N"/>
+                                    <constraint firstAttribute="width" constant="343" id="jeW-nS-4UP"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="Odb-Tk-k8E" userLabel="People Slider">
+                                <rect key="frame" x="14" y="94" width="347" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="iIc-sk-doa"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="peopleSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="tS6-gT-qhp"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqf-ng-DGO" userLabel="Calculate Button">
+                                <rect key="frame" x="155" y="160" width="64" height="30"/>
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculateSplitAmount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o0N-cx-f3e"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHA-Vu-7e7" userLabel="Amount Label">
+                                <rect key="frame" x="16" y="226" width="343" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="c6A-a2-Jex"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7z4-yf-MkD">
+                                <rect key="frame" x="187" y="74" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7z4-yf-MkD" firstAttribute="top" secondItem="zfe-5L-W0s" secondAttribute="bottom" constant="16" id="2Oh-Ff-QaC"/>
+                            <constraint firstItem="Odb-Tk-k8E" firstAttribute="top" secondItem="zfe-5L-W0s" secondAttribute="bottom" constant="36" id="Bbu-Bx-6xi"/>
+                            <constraint firstItem="cqf-ng-DGO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Biy-HY-J3E"/>
+                            <constraint firstItem="NHA-Vu-7e7" firstAttribute="top" secondItem="cqf-ng-DGO" secondAttribute="bottom" constant="36" id="C6u-IR-mXZ"/>
+                            <constraint firstItem="zfe-5L-W0s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CSF-vi-pox"/>
+                            <constraint firstItem="Odb-Tk-k8E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b9p-og-HjQ"/>
+                            <constraint firstItem="zfe-5L-W0s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mta-AD-e5q"/>
+                            <constraint firstItem="cqf-ng-DGO" firstAttribute="top" secondItem="Odb-Tk-k8E" secondAttribute="bottom" constant="36" id="qvG-n9-2EX"/>
+                            <constraint firstItem="zfe-5L-W0s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="reP-SQ-NWq"/>
+                            <constraint firstItem="7z4-yf-MkD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tqk-FJ-cPl"/>
+                            <constraint firstItem="NHA-Vu-7e7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uhg-oW-7Pl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="NHA-Vu-7e7" id="9EB-8X-tBF"/>
+                        <outlet property="amountOfPeopleLabel" destination="7z4-yf-MkD" id="etD-Qe-98q"/>
+                        <outlet property="amountOfPeopleSlider" destination="Odb-Tk-k8E" id="mfl-px-YZn"/>
+                        <outlet property="billTextField" destination="zfe-5L-W0s" id="Rai-2C-m0M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
